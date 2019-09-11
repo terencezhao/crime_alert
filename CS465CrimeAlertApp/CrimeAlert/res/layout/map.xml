@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="wrap_content" 
+	android:layout_height="wrap_content" 
+	android:layout_alignParentBottom="true" 
+	android:layout_centerHorizontal="true">
+	<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:orientation="vertical"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    >
+		<TextView  
+		    android:layout_width="fill_parent" 
+		    android:layout_height="wrap_content" 
+		    android:text="@string/hello"
+		    />
+		<Button
+			android:id="@+id/retrieve_location_button"
+			android:text="Q"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentRight="true"
+			/>
+		<EditText
+	        android:id="@+id/textentry"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_toLeftOf="@id/retrieve_location_button"
+	        android:background="@android:drawable/editbox_background"
+	        />
+		<com.google.android.maps.MapView 
+			android:id="@+id/mapView"
+		 	android:layout_width="fill_parent"
+		 	android:layout_height="fill_parent"
+		 	android:layout_below="@id/textentry"
+		 	android:enabled="true"
+		 	android:clickable="true"
+		 	android:apiKey="0cO92-e0Et0c7-7nHIimqJuwgyAQGvoLNaKK0sA"
+		 	/>
+	<LinearLayout android:id="@+id/zoom" 
+		   android:layout_width="wrap_content" 
+		   android:layout_height="wrap_content" 
+		   android:layout_alignTop="@id/mapView" 
+		   android:layout_alignParentRight="true" 
+		   /> 
+	<SlidingDrawer android:id="@+id/slidingDrawer1"
+        android:layout_width="fill_parent" android:layout_height="fill_parent"
+        android:topOffset="340dip" android:handle="@+id/handle"
+        android:content="@+id/content">
+        
+        <Button android:text=" ^ " 
+            android:layout_width="490px"
+			android:layout_height="50px" 
+            android:id="@+id/handle"></Button>
+        
+        <RelativeLayout android:id="@+id/content"
+            android:layout_width="fill_parent" android:layout_height="fill_parent"
+            android:gravity="center"
+			android:padding="3dip"
+            android:background="#FF444444">
+            <Button android:text="Report a Crime" android:layout_height="wrap_content"
+				android:background="@drawable/report_button"
+				android:paddingRight="3dip"
+                android:layout_width="200px" android:id="@+id/reportcrime"
+				android:layout_marginRight="10dip"></Button>
+            <Button android:text="PANIC!" android:layout_height="wrap_content"
+				android:background="@drawable/panic_button"
+				android:paddingLeft="3dip"
+                android:layout_width="200px" android:id="@+id/panic"
+				android:layout_toRightOf="@id/reportcrime"
+				android:layout_alignTop="@id/reportcrime"
+				android:layout_marginLeft="10dip"></Button>
+       	</RelativeLayout>
+	</SlidingDrawer>	
+	</RelativeLayout>
+</LinearLayout>
